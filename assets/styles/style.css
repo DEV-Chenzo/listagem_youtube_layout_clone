@@ -8,11 +8,10 @@ body {
     "header header header header"
     "aside main main main"
     "aside footer footer footer";
-    grid-template-columns: 1.25fr 2fr 2fr 2fr;
+  grid-template-columns: 1.2fr 2fr 2fr 2fr;
 }
 header {
-  background-color: #20202077;
-  color: white;
+  background-color: #ffffff;
   grid-area: header;
   max-height: 70px;
   display: flex;
@@ -20,6 +19,8 @@ header {
   justify-content: space-between;
   gap: 10px;
   padding: 10px;
+  position: sticky;
+  top: 0;
 }
 nav,
 .search-bar,
@@ -45,6 +46,9 @@ nav,
     width: 400px;
     height: 30px;
     border-radius: 20px 0px 0px 20px;
+    border-top: 1px solid rgb(204, 204, 204);
+    border-bottom: 1px solid rgb(204, 204, 204);
+    border-left: 1px solid rgb(204, 204, 204);
   }
 
   button {
@@ -52,51 +56,67 @@ nav,
     width: 50px;
     cursor: pointer;
     border-radius: 0px 20px 20px 0px;
+    border-top: 1px solid rgb(204, 204, 204);
+    border-bottom: 1px solid rgb(204, 204, 204);
+    border-right: 1px solid rgb(204, 204, 204);
   }
 }
 
 main {
-  background-color: #ce0000;
-
+  background-color: #f9f8f8;
   padding: 10px;
   grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.content {
-    max-width: 360px;
+section.content {
+  max-width: 358px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+section.content img {
+  border-radius: 15px;
+  max-width: 100%;
+  margin-bottom: 10px;
 }
 
 .video-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px ;
+  }
+
+  .video-description {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    
-    img {
-        height: 40px;
-        width: 40px;
-        border-radius: 50%;
+    flex-direction: column;
+    h2 {
+      font-size: 14px;
+      margin-bottom: 5px;
+      font-weight: bolder;
     }
-    
-    .video-description {
-        display: flex;
-        flex-direction: column;
-        h2 {
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-        
-        p {
-            font-size: 12px;
-            color: #555;
-            margin-bottom: 0;
-        }
+
+    p {
+      font-size: 12px;
+      color: #555;
+      margin-bottom: 0;
     }
+  }
 }
 
 aside {
-  background-color: #00d0ff;
-
   grid-area: aside;
+  position: sticky;
+  top: 25;
+  left: 0;
 }
 
 ul {
@@ -116,17 +136,15 @@ ul {
   }
 
   .explorer-icon {
-   
     padding: 5px;
     border: 1px solid rgb(51, 51, 51);
-    border-radius:20px;
+    border-radius: 20px;
   }
 }
 
-
 footer {
   background-color: #0e05c7;
- 
+
   padding: 10px;
   grid-area: footer;
 }
