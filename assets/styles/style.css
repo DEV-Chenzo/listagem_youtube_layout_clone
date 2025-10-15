@@ -3,11 +3,12 @@
 body {
   display: grid;
   width: 100dvw;
+  /* height: 100vh; */
   grid-template-areas:
     "header header header header"
     "aside main main main"
-    "footer footer footer footer";
-  grid-auto-columns: 1fr 2fr 2fr 2fr;
+    "aside footer footer footer";
+    grid-template-columns: 1.25fr 2fr 2fr 2fr;
 }
 header {
   background-color: #20202077;
@@ -46,30 +47,86 @@ nav,
     border-radius: 20px 0px 0px 20px;
   }
 
-    button {
-        height: 30px;
-        width: 50px;
-        cursor: pointer;
-        border-radius: 0px 20px 20px 0px;
-    }
+  button {
+    height: 30px;
+    width: 50px;
+    cursor: pointer;
+    border-radius: 0px 20px 20px 0px;
+  }
 }
 
 main {
   background-color: #ce0000;
-  color: white;
+
   padding: 10px;
   grid-area: main;
 }
+
+.content {
+    max-width: 360px;
+}
+
+.video-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+    }
+    
+    .video-description {
+        display: flex;
+        flex-direction: column;
+        h2 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        p {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 0;
+        }
+    }
+}
+
 aside {
   background-color: #00d0ff;
-  color: white;
-  padding: 10px;
+
   grid-area: aside;
 }
 
+ul {
+  text-align: left;
+
+  &:first-child {
+    margin-top: 40px;
+  }
+  li {
+    margin-bottom: 15px;
+  }
+
+  .icon {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+  }
+
+  .explorer-icon {
+   
+    padding: 5px;
+    border: 1px solid rgb(51, 51, 51);
+    border-radius:20px;
+  }
+}
+
+
 footer {
   background-color: #0e05c7;
-  color: white;
+ 
   padding: 10px;
   grid-area: footer;
 }
